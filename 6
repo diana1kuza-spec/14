@@ -1,0 +1,18 @@
+# Запрашиваем цены предметов
+prices_str = input("Введите цены предметов через пробел: ")
+prices = [int(x) for x in prices_str.split()]
+
+# 1. Сортировка по возрастанию
+sorted_asc = sorted(prices)
+print(f"Сортировка по возрастанию: {sorted_asc}")
+
+# 2. Сортировка по убыванию
+sorted_desc = sorted(prices, reverse=True)
+print(f"Сортировка по убыванию: {sorted_desc}")
+
+# 3. Оригинальный порядок (от старых к новым)
+print(f"Оригинальный порядок (от старых к новым): {prices}")
+
+# 4. Обратный порядок (от новых к старым)
+reversed_prices = prices[::-1]
+print(f"Обратный порядок (от новых к старым): {reversed_prices}")
