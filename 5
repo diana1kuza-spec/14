@@ -1,0 +1,16 @@
+# Запрашиваем количество предметов, которые можно унести
+n = int(input("Сколько предметов может унести игрок: "))
+
+# Запрашиваем ценности предметов
+values_str = input("Введите ценности предметов через пробел: ")
+values = [int(x) for x in values_str.split()]
+
+# Сортируем ценности по убыванию, чтобы взять самые дорогие
+values.sort(reverse=True)
+
+# Считаем сумму первых n предметов
+total_value = 0
+for i in range(min(n, len(values))):
+    total_value += values[i]
+
+print(total_value)
