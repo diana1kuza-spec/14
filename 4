@@ -1,0 +1,23 @@
+import random
+
+# Генерируем вложенный список
+matrix = [[random.randint(1, 9) for _ in range(4)] for _ in range(3)]
+print(f"Исходный список: {matrix}")
+
+# Запрашиваем значение для поиска
+target = int(input("Введите значение для поиска: "))
+
+# Список для хранения позиций
+positions = []
+
+# Ищем все вхождения
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        if matrix[i][j] == target:
+            positions.append((i, j))
+
+# Выводим результат
+if positions:
+    print(f"Элемент {target} найден в позициях: {positions}")
+else:
+    print("Элемент не найден")
