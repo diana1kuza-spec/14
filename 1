@@ -1,0 +1,21 @@
+import random
+
+# Генерируем вложенный список случайным образом (3 строки по 5 элементов)
+matrix = [[random.randint(-20, 20) for _ in range(5)] for _ in range(3)]
+print(f"Исходный список: {matrix}")
+
+# Инициализируем максимум первым элементом
+max_value = matrix[0][0]
+max_row = 0
+max_col = 0
+
+# Проходим по всем строкам и столбцам
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        if matrix[i][j] > max_value:
+            max_value = matrix[i][j]
+            max_row = i
+            max_col = j
+
+print(f"Максимальный элемент: {max_value}")
+print(f"Позиция: строка {max_row}, столбец {max_col}")
